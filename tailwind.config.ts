@@ -12,8 +12,18 @@ const config: Config = {
         grayPrimary: "#858581",
         redPrimary: "#E50913",
       },
+      keyframes: {
+        slideDown: {
+          "0%": { transform: "translateY(0)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+      },
+      animation: {
+        slideDown: "slideDown 0.3s ease forwards",
+      },
     },
   },
+
   plugins: [],
 };
 export default config;

@@ -14,8 +14,4 @@
 .border-dashed-small {
   border: 2px dashed #858581;
   border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
 }

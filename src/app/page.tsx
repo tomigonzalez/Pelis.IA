@@ -1,11 +1,18 @@
 import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
 import Popcorn from "./components/popcorn";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Filmix - Hello World",
+  description: "La mejor IA para recomendar peliculas",
+  keywords: ["cine", "peliculas", "ocio", "disfrutar", "familia"],
+};
 
 export default function HomePage() {
   return (
-    <section className="w-full h-full flex flex-col items-center justify-center gap-5">
-      <h2 className="text-xl font-thin">INTRODUCCION</h2>
+    <section className="w-full h-full flex flex-col items-center justify-center gap-5 relative">
+      <h2 className="text-2xl font-thin">INTRODUCCION</h2>
       <Image
         src={"/assets/img/filmixBig.svg"}
         alt="Logo de la plataforma"
@@ -26,29 +33,29 @@ export default function HomePage() {
         </div>
       </div>
 
-      <Popcorn
-        style="top-[-10vh] left-[0vh] blur-[2px] "
-        w={350}
-        popcorn="valde1"
-      />
-      <Popcorn
-        style="top-[60vh] left-[20vh] blur-[2px]"
-        w={60}
-        popcorn="pochoclo2"
-      />
-
-      <Popcorn
-        style="top-[70vh] left-[55vh] blur-[1px]"
-        w={150}
-        popcorn="pochoclo4"
-      />
-
-      <Popcorn
-        style="top-[20vh] left-[60vh] blur-[1.3px]"
-        w={110}
-        popcorn="pochoclo3"
-      />
-      <Popcorn style="top-[50vh] right-[25vh] " w={300} popcorn="pochoclo1" />
+      <div className="absolute w-full h-full">
+        <Popcorn
+          style="top-[-22vh] left-[-45vh] blur-[2px]"
+          w={350}
+          popcorn="valde1"
+        />
+        <Popcorn
+          style="top-[45vh] left-[-25vh] blur-[2px]"
+          w={70}
+          popcorn="pochoclo2"
+        />
+        <Popcorn
+          style="top-[57vh] left-[12vh] blur-[0.5px]"
+          w={150}
+          popcorn="pochoclo4"
+        />
+        <Popcorn
+          style="top-[8vh] left-[15vh] blur-[1.3px]"
+          w={100}
+          popcorn="pochoclo3"
+        />
+        <Popcorn style="top-[43vh] right-[-15vh]" w={270} popcorn="pochoclo1" />
+      </div>
     </section>
   );
 }
