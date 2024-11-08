@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FiArrowRightCircle } from "react-icons/fi";
 import Popcorn from "./components/popcorn";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Filmix - Hello World",
@@ -11,25 +12,31 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <section className="w-full h-full flex flex-col items-center justify-center gap-5 relative">
-      <h2 className="text-2xl font-thin">INTRODUCCION</h2>
-      <Image
-        src={"/assets/img/filmixBig.svg"}
-        alt="Logo de la plataforma"
-        width={"400"}
-        height={"100"}
-      ></Image>
-      <div className="w-[60%] flex flex-col gap-16 mb-10">
-        <div className="w-full text-center text-xl font-medium">
-          <p>Descubre películas perfectas para ti con la ayuda de IA.</p>
-          <p>
-            Nuestro sistema inteligente analiza tus gustos en base a preguntas y
-            te recomienda la mejor opcion.
-          </p>
-        </div>
-        <div className="flex flex-row items-center justify-center gap-2 text-xl">
-          <a>Ver recomendacion</a>
-          <FiArrowRightCircle size={25} className="" />
+    <section className="w-full h-full flex flex-col relative">
+      <div className="w-full h-full flex flex-col gap-5 items-center justify-center z-[40]">
+        <h2 className="text-2xl font-thin">INTRODUCCION</h2>
+        <Image
+          src={"/assets/img/filmixBig.svg"}
+          alt="Logo de la plataforma"
+          width={"400"}
+          height={"100"}
+        ></Image>
+        <div className="w-[60%] flex flex-col gap-16 mb-10">
+          <div className="w-full text-center text-xl font-medium">
+            <p>Descubre películas perfectas para ti con la ayuda de IA.</p>
+            <p>
+              Nuestro sistema inteligente analiza tus gustos en base a preguntas
+              y te recomienda la mejor opcion.
+            </p>
+          </div>
+
+          <Link
+            href="/recomendacion"
+            className="flex flex-row items-center justify-center gap-2 text-xl"
+          >
+            <p>Ver recomendacion</p>
+            <FiArrowRightCircle size={25} />
+          </Link>
         </div>
       </div>
 

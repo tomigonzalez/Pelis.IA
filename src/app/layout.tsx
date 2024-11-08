@@ -3,7 +3,7 @@ import "./globals.css";
 import Nav from "./components/nav/nav";
 import ModalNav from "./components/modalNav/modalNav";
 import { MyProvider } from "./context/myContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function RootLayout({
   children,
@@ -15,6 +15,10 @@ export default function RootLayout({
   const toggleMenu = () => {
     setIsModalOpen((prev) => !prev);
   };
+  useEffect(() => {
+    setIsModalOpen(false);
+  }, []);
+
   return (
     <html lang="en">
       <body>
@@ -36,7 +40,9 @@ export default function RootLayout({
               © {new Date().getFullYear()} TMGC
             </footer>
           </div>
-          {isModalOpen && <ModalNav isModalOpen={isModalOpen} />}
+          {isModalOpen && (
+            <ModalNav isModalOpen={isModalOpen} toggleMenu={toggleMenu} />
+          )}
         </MyProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoMenu } from "react-icons/io5";
+import { IoClose, IoMenu } from "react-icons/io5";
 
 export default function Nav({
   toggleMenu,
@@ -20,10 +20,17 @@ export default function Nav({
       </div>
       <div className="w-[55px] h-[70%] flex items-center justify-center border-dashed-small">
         <button onClick={toggleMenu}>
-          <IoMenu
-            size={37}
-            className="cursor-pointer text-grayPrimary hover:text-yellow-400"
-          />
+          {!isModalOpen ? (
+            <IoMenu
+              size={37}
+              className="cursor-pointer text-grayPrimary hover:text-yellow-400"
+            />
+          ) : (
+            <IoClose
+              size={37}
+              className="cursor-pointer text-grayPrimary hover:text-redPrimary"
+            />
+          )}
         </button>
       </div>
     </nav>

@@ -1,12 +1,43 @@
-export default function ModalNav({ isModalOpen }: { isModalOpen: boolean }) {
+import Link from "next/link";
+
+export default function ModalNav({
+  isModalOpen,
+  toggleMenu,
+}: {
+  isModalOpen: boolean;
+  toggleMenu: () => void;
+}) {
   return (
     <div
       className={`relative transition-transform z-[3] ${
         isModalOpen ? "animate-slideDown" : ""
       }`}
     >
+      {/* Fondo con opacidad */}
+      <div className="absolute bg-black opacity-60 min-h-screen w-full z-[1]"></div>
+
       {/* Contenido del modal */}
-      <div className="relative bg-black opacity-[0.8] min-h-screen w-full z-[1]"></div>
+      <div className="relative z-[2] w-full h-screen flex flex-col-reverse">
+        <div className="w-full h-[80vh] flex justify-center">
+          <ul className="flex flex-col gap-10 text-center">
+            <Link
+              className="font-bold text-4xl text-white"
+              href={"/"}
+              onClick={toggleMenu}
+            >
+              INICIO
+            </Link>
+            <Link
+              href={"/recomendacion"}
+              className="font-bold text-4xl text-white"
+              onClick={toggleMenu}
+            >
+              RECOMENDAR PELICULA
+            </Link>
+            <li className="font-bold text-4xl text-white">CONTACTO</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
