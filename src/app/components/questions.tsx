@@ -25,12 +25,8 @@ export default function Questions({
     setAnswers(updatedAnswers);
   };
 
-  console.log("Respuestas actuales:", answers);
-
   return (
     <section className="w-full h-full flex flex-col justify-between items-center">
-      <h1>ARRANQUEMOS</h1>
-
       <div className="w-full h-full flex flex-col items-center justify-center">
         <h4 className="text-xl font-semibold mb-4 text-left">
           {currentQuestion.question}

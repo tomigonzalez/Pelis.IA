@@ -1,4 +1,5 @@
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { useMyContext } from "../context/myContext"; // Importa el contexto
 
 export default function StepperControl({
   currentQuestions,
@@ -9,16 +10,21 @@ export default function StepperControl({
   nextQuestion: () => void;
   prevQuestion: () => void;
 }) {
+  const { answers } = useMyContext();
+
+  // Comprobar si hay una respuesta seleccionada para la pregunta actual
+  const isAnswerSelected = answers[currentQuestions - 1] !== undefined;
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
       <div className="w-full flex flex-row justify-around">
         {currentQuestions > 1 ? (
           <button
-            className="flex items-center gap-2 hover:text-redPrimary"
+            className="flex items-center gap-2 text-xl hover:text-redPrimary"
             onClick={prevQuestion}
           >
             <FiArrowLeftCircle size={20} />
-            <span className="flex items-center">Atras</span>
+            <span className="flex  items-center">Atrás</span>
           </button>
         ) : (
           <button
@@ -26,17 +32,23 @@ export default function StepperControl({
             onClick={prevQuestion}
           ></button>
         )}
+
         {currentQuestions < 5 ? (
           <button
-            className="flex items-center gap-2 hover:text-yellow-400"
+            className={`flex items-center gap-2 text-xl hover:text-yellow-400 ${
+              !isAnswerSelected
+                ? "cursor-not-allowed opacity-50 hover:text-yellow-400"
+                : ""
+            }`}
             onClick={nextQuestion}
+            disabled={!isAnswerSelected}
           >
             <span className="flex items-center">Siguiente</span>
             <FiArrowRightCircle size={20} />
           </button>
         ) : (
-          <button className="flex items-center gap-2 hover:text-yellow-400">
-            <span className="flex items-center">Mostrar resultado</span>
+          <button className="flex items-center gap-2 text-xl hover:text-yellow-400">
+            <span className="flex items-center">Recomendar</span>
           </button>
         )}
       </div>
