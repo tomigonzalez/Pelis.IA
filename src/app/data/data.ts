@@ -14,4 +14,14 @@ export const options = [
     question: "¿Prefieres películas más largas o cortas?",
     options: ["Menos de 90 minutos", "90-120 minutos", "Más de 120 minutos"],
   },
+  {
+    id: 4,
+    question: "¿Prefieres películas más largas o cortas?",
+    options: ["Menos de 90 minutos", "90-120 minutos", "Más de 120 minutos"],
+  },
+  {
+    id: 5,
+    question: "¿Prefieres películas más largas o cortas?",
+    options: ["Menos de 90 minutos", "90-120 minutos", "Más de 120 minutos"],
+  },
 ];

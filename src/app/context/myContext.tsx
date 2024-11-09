@@ -1,10 +1,10 @@
 "use client";
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useContext } from "react";
 
 // Define la interfaz para el contexto
 interface MyContextProps {
-  myValue: string;
-  setMyValue: (value: string) => void;
+  answers: string[];
+  setAnswers: (newAnswers: string[]) => void;
 }
 
 // Crea el contexto con un valor inicial
@@ -12,11 +12,19 @@ const MyContext = createContext<MyContextProps | undefined>(undefined);
 
 // Define el proveedor del contexto
 export const MyProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [myValue, setMyValue] = useState<string>("Valor inicial");
+  const [answers, setAnswers] = useState<string[]>([]);
 
   return (
-    <MyContext.Provider value={{ myValue, setMyValue }}>
+    <MyContext.Provider value={{ answers, setAnswers }}>
       {children}
     </MyContext.Provider>
   );
+};
+
+export const useMyContext = () => {
+  const context = useContext(MyContext);
+  if (!context) {
+    throw new Error("useMyContext debe usarse dentro de MyProvider");
+  }
+  return context;
 };

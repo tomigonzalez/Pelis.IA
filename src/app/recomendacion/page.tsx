@@ -1,31 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Stepper from "../components/stepper";
 import StepperControl from "../components/stepperControl";
+import Questions from "../components/questions";
 
 export default function RecomendacionesPage() {
   const [currentQuestions, setCurrentQuestions] = useState<number>(1);
 
+  const nextQuestion = () => {
+    setCurrentQuestions((prev) => prev + 1);
+  };
+  const prevQuestion = () => {
+    setCurrentQuestions((prev) => prev - 1);
+  };
+
   const displayQuestions = (step: number) => {
     switch (step) {
       case 1:
-        return;
+        return <Questions currentQuestions={currentQuestions} />;
       case 2:
-        return;
+        return <Questions currentQuestions={currentQuestions} />;
       case 3:
-        return;
+        return <Questions currentQuestions={currentQuestions} />;
       case 4:
-        return;
+        return <Questions currentQuestions={currentQuestions} />;
       case 5:
-        return;
+        return <Questions currentQuestions={currentQuestions} />;
     }
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <Stepper />
-      <h1>ARRANQUEMOS</h1>
-      <StepperControl />
+    <div className="h-full flex flex-col justify-between items-center">
+      <Stepper currentQuestions={currentQuestions} />
+
+      {displayQuestions(currentQuestions)}
+
+      <StepperControl
+        nextQuestion={nextQuestion}
+        prevQuestion={prevQuestion}
+        currentQuestions={currentQuestions}
+      />
     </div>
   );
 }

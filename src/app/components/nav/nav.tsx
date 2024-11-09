@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { IoClose, IoMenu } from "react-icons/io5";
 
 export default function Nav({
@@ -10,14 +11,15 @@ export default function Nav({
 }) {
   return (
     <nav className="h-[70px] w-full border-dashed flex flex-row items-center justify-between pl-4 pr-4">
-      <div className="">
+      <Link href="/">
         <Image
           src="/assets/img/filmix.png"
-          alt="Logo de la plataforma "
-          width={"100"}
-          height={"100"}
+          alt="Logo de la plataforma"
+          width={100}
+          height={100}
+          className="cursor-pointer"
         />
-      </div>
+      </Link>
       <div className="w-[55px] h-[70%] flex items-center justify-center border-dashed-small">
         <button onClick={toggleMenu}>
           {!isModalOpen ? (

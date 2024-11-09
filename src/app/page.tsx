@@ -32,7 +32,7 @@ export default function HomePage() {
 
           <Link
             href="/recomendacion"
-            className="flex flex-row items-center justify-center gap-2 text-xl"
+            className="flex flex-row items-center justify-center gap-2 text-xl hover:text-yellow-400"
           >
             <p>Ver recomendacion</p>
             <FiArrowRightCircle size={25} />

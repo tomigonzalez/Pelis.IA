@@ -2,8 +2,9 @@
 import "./globals.css";
 import Nav from "./components/nav/nav";
 import ModalNav from "./components/modalNav/modalNav";
-import { MyProvider } from "./context/myContext";
+
 import { useEffect, useState } from "react";
+import { MyProvider } from "./context/myContext";
 
 export default function RootLayout({
   children,
