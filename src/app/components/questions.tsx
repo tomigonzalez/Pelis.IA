@@ -28,12 +28,12 @@ export default function Questions({
   return (
     <section className="w-full h-full flex flex-col justify-between items-center">
       <div className="w-full h-full flex flex-col items-center justify-center">
-        <h4 className="text-xl font-semibold mb-4 text-left">
+        <h4 className="max-sm:text-sm text-xl  font-semibold mb-4 text-left">
           {currentQuestion.question}
         </h4>
 
         <select
-          className="cursor-pointer bg-transparent border-dashed rounded-xl p-4 w-1/2"
+          className="cursor-pointer bg-transparent border-dashed rounded-xl p-4 sm:w-1/2 w-2/3"
           value={answers[currentQuestions - 1] || ""}
           onChange={handleChange}
         >

@@ -6,7 +6,7 @@ export default function Stepper(props: Props) {
   return (
     <div className="w-full h-2/5 flex flex-col justify-center items-center">
       <div className="w-3/4 min-h-6">
-        <ul className="flex flex-row overflow-hidden justify-between gap-6 rounded-2xl text-center ">
+        <ul className="flex flex-row overflow-hidden justify-between max-md:gap-1 gap-6 rounded-2xl text-center ">
           <li
             className={` w-full ${
               props.currentQuestions >= 1

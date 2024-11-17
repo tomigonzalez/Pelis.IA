@@ -6,9 +6,5 @@ export const metadata: Metadata = {
   keywords: ["cine", "peliculas", "ocio", "disfrutar", "familia"],
 };
 export default function RecomendacionesPage() {
-  return (
-    <>
-      <LayoutRecomend></LayoutRecomend>
-    </>
-  );
+  return <LayoutRecomend></LayoutRecomend>;
 }

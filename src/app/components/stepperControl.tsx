@@ -20,10 +20,10 @@ export default function StepperControl({
       <div className="w-full flex flex-row justify-around">
         {currentQuestions > 1 ? (
           <button
-            className="flex items-center gap-2 text-xl hover:text-redPrimary"
+            className="flex items-center gap-2 max-md:text-sm text-xl hover:text-redPrimary"
             onClick={prevQuestion}
           >
-            <FiArrowLeftCircle size={20} />
+            <FiArrowLeftCircle className=" max-md:text-[1.4rem] text-[1.8rem]" />
             <span className="flex  items-center">Atrás</span>
           </button>
         ) : (
@@ -35,7 +35,7 @@ export default function StepperControl({
 
         {currentQuestions < 5 ? (
           <button
-            className={`flex items-center gap-2 text-xl hover:text-yellow-400 ${
+            className={`flex items-center gap-2 max-md:text-sm text-xl hover:text-yellow-400 ${
               !isAnswerSelected
                 ? "cursor-not-allowed opacity-50 hover:text-yellow-400"
                 : ""
@@ -44,10 +44,10 @@ export default function StepperControl({
             disabled={!isAnswerSelected}
           >
             <span className="flex items-center">Siguiente</span>
-            <FiArrowRightCircle size={20} />
+            <FiArrowRightCircle className="max-md:text-[1.4rem] text-[1.8rem]" />
           </button>
         ) : (
-          <button className="flex items-center gap-2 text-xl hover:text-yellow-400">
+          <button className="flex items-center gap-2 max-md:text-sm text-xl hover:text-yellow-400">
             <span className="flex items-center">Recomendar</span>
           </button>
         )}

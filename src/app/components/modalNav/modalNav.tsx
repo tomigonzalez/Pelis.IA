@@ -19,9 +19,9 @@ export default function ModalNav({
       {/* Contenido del modal */}
       <div className="relative z-[2] w-full h-screen flex flex-col-reverse">
         <div className="w-full h-[80vh] flex justify-center">
-          <ul className="flex flex-col gap-10 text-center">
+          <ul className="flex flex-col gap-10 max-md:text-2xl text-4xl text-center">
             <Link
-              className="font-bold text-4xl text-white"
+              className="font-bold  text-white"
               href={"/"}
               onClick={toggleMenu}
             >
@@ -29,12 +29,12 @@ export default function ModalNav({
             </Link>
             <Link
               href={"/recomendacion"}
-              className="font-bold text-4xl text-white"
+              className="font-bold  text-white"
               onClick={toggleMenu}
             >
               RECOMENDAR PELICULA
             </Link>
-            <li className="font-bold text-4xl text-white">CONTACTO</li>
+            <li className="font-bold  text-white">CONTACTO</li>
           </ul>
         </div>
       </div>

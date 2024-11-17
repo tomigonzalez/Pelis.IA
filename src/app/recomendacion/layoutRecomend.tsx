@@ -3,6 +3,7 @@ import { useState } from "react";
 import Stepper from "../components/stepper";
 import StepperControl from "../components/stepperControl";
 import Questions from "../components/questions";
+import Image from "next/image";
 type Props = {};
 
 const LayoutRecomend = (props: Props) => {
@@ -30,16 +31,18 @@ const LayoutRecomend = (props: Props) => {
     }
   };
   return (
-    <div className="h-full flex flex-col justify-between items-center">
-      <Stepper currentQuestions={currentQuestions} />
+    <div className="w-full mt-2 flex flex-col gap-4 h-full">
+      <div className="w-full h-full flex flex-col gap-5 items-center justify-center z-[40]">
+        <Stepper currentQuestions={currentQuestions} />
 
-      {displayQuestions(currentQuestions)}
+        {displayQuestions(currentQuestions)}
 
-      <StepperControl
-        nextQuestion={nextQuestion}
-        prevQuestion={prevQuestion}
-        currentQuestions={currentQuestions}
-      />
+        <StepperControl
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
+          currentQuestions={currentQuestions}
+        />
+      </div>
     </div>
   );
 };
