@@ -29,7 +29,7 @@ export const options = [
   {
     id: 3,
     question: "¿Qué duración prefieres para la película?",
-    options: ["Menos de 1 hora y media,", "1.5 a 2 horas", "Más de 2 horas"],
+    options: ["Menos de 1 hora y media", "1.5 a 2 horas", "Más de 2 horas"],
   },
   {
     id: 4,
