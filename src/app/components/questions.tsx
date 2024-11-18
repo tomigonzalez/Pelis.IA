@@ -28,7 +28,7 @@ export default function Questions({
   return (
     <section className="w-full h-full flex flex-col justify-between items-center">
       <div className="w-full h-full flex flex-col items-center justify-center">
-        <h4 className="max-sm:text-sm text-xl  font-semibold mb-4 text-left">
+        <h4 className="max-sm:text-sm text-xl sm:w-1/2 w-2/3 font-semibold mb-4 text-left ">
           {currentQuestion.question}
         </h4>
 

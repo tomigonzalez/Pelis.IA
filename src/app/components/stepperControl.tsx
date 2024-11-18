@@ -1,5 +1,6 @@
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import { useMyContext } from "../context/myContext"; // Importa el contexto
+import Link from "next/link";
 
 export default function StepperControl({
   currentQuestions,
@@ -47,9 +48,12 @@ export default function StepperControl({
             <FiArrowRightCircle className="max-md:text-[1.4rem] text-[1.8rem]" />
           </button>
         ) : (
-          <button className="flex items-center gap-2 max-md:text-sm text-xl hover:text-yellow-400">
+          <Link
+            className="flex items-center gap-2 max-md:text-sm text-xl hover:text-yellow-400"
+            href={"/pelicula"}
+          >
             <span className="flex items-center">Recomendar</span>
-          </button>
+          </Link>
         )}
       </div>
     </div>
